@@ -80,9 +80,6 @@ map <leader>b :BufstopFast<CR>
 
 nmap ,ev :tabedit $MYVIMRC<CR>
 
-nmap ,ep :tabedit ~/plugins<CR>
-
-
 
 
 
