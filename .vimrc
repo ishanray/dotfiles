@@ -1,53 +1,127 @@
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""Vundle"""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
-  " Required:
-  set runtimepath+=/Users/ishan/.vim/bundle/neobundle.vim/
-endif
+set nocompatible
 
-" Required:
-call neobundle#begin(expand('/Users/ishan/.vim/bundle'))
+filetype off
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+set rtp+=~/.vim/bundle/Vundle.vim
 
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'rking/ag.vim'
+call vundle#begin()
 
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mjbrownie/swapit'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'rking/ag.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'mihaifm/bufstop'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
-" Required:
-call neobundle#end()
+call vundle#end()
 
-" Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""General"""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+autocmd BufWritePre * StripWhitespace
+
+syntax enable
+
+set tabstop=4 shiftwidth=4 expandtab autoindent smartindent
+
+set backspace=indent,eol,start
+
+set laststatus=2
+
+set wildmenu
+
+let mapleader=','
 
 set number
-syntax enable
-set guifont=Monaco:h18
-set laststatus=2
-set incsearch
+
+set t_CO=256
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""Mappings"""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+noremap <Up> <NOP>
+
+noremap <Down> <NOP>
+
+noremap <Left> <NOP>
+
+noremap <Right> <NOP>
+
 map <C-n> :NERDTreeToggle<CR>
-set ignorecase
-set expandtab
-set tabstop=2
-set shiftwidth=2
-colorscheme Murphy
+
+map <leader>b :BufstopFast<CR>
+
+nmap ,ev :tabedit $MYVIMRC<CR>
+
+nmap ,ep :tabedit ~/plugins<CR>
+
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""Autogroup""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""CtrlP""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""Search"""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+set incsearch
+
+set hlsearch
+
+set ignorecase smartcase
+
+nnoremap <leader><space> :nohlsearch<CR>
+
