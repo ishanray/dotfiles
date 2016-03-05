@@ -18,7 +18,6 @@ Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'mihaifm/bufstop'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -27,6 +26,11 @@ Plugin 'mattn/emmet-vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'Chun-Yang/vim-action-ag'
 
 call vundle#end()
 
@@ -58,6 +62,27 @@ set number
 
 set t_CO=256
 
+set vb
+
+set autoread
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""Colorscheme"""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"if has("gui_running")
+"    colorscheme aurora
+"endif
+
+"set guifont=Fira\ Code:h15
+
+set guioptions-=L
+
+set guioptions-=r
+
 
 
 
@@ -79,6 +104,18 @@ map <C-n> :NERDTreeToggle<CR>
 map <leader>b :BufstopFast<CR>
 
 nmap ,ev :tabedit $MYVIMRC<CR>
+
+nmap gs :Gstatus<CR>
+
+nnoremap <silent> [b :bprevious<CR>
+
+nnoremap <silent> ]b :bnext<CR>
+
+nnoremap <silent> [B :bfirst<CR>
+
+nnoremap <silent> ]B :blast<CR>
+
+nmap <leader>gv :cd ~/Desktop/code/visually<CR>
 
 
 
@@ -127,7 +164,16 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""Ag"""""""""""""""""""""""
+"""""""""""""""""Multiple cursor"""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:ag_working_path_mode="r"
+let g:multi_cursor_use_default_mapping=0
+
+let g:multi_cursor_next_key='<D-d>'
+
+let g:multi_cursor_prev_key='<D-p>'
+
+let g:multi_cursor_skip_key='<D-x>'
+
+let g:multi_cursor_quit_key='<Esc>'
+
