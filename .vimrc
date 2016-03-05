@@ -62,7 +62,7 @@ set number
 
 set t_CO=256
 
-set vb
+set visualbell
 
 set autoread
 
