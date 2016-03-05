@@ -115,8 +115,6 @@ nnoremap <silent> [B :bfirst<CR>
 
 nnoremap <silent> ]B :blast<CR>
 
-nmap <leader>gv :cd ~/Desktop/code/visually<CR>
-
 
 
 
