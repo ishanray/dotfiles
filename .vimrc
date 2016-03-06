@@ -28,9 +28,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Chun-Yang/vim-action-ag'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'craigemery/vim-autotag'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 
@@ -62,7 +67,7 @@ set number
 
 set t_CO=256
 
-set visualbell
+set vb
 
 set autoread
 
@@ -73,11 +78,12 @@ set autoread
 """""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""Colorscheme"""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""
-"if has("gui_running")
-"    colorscheme aurora
-"endif
+if has("gui_running")
+    let g:seoul256_background = 233
+    colorscheme seoul256
+endif
 
-"set guifont=Fira\ Code:h15
+set guifont=Fira\ Code:h15
 
 set guioptions-=L
 
@@ -99,13 +105,17 @@ noremap <Left> <NOP>
 
 noremap <Right> <NOP>
 
+nnoremap j gj
+
+nnoremap k gk
+
 map <C-n> :NERDTreeToggle<CR>
 
 map <leader>b :BufstopFast<CR>
 
 nmap ,ev :tabedit $MYVIMRC<CR>
 
-nmap gs :Gstatus<CR>
+nmap <leader>gs :Gstatus<CR>
 
 nnoremap <silent> [b :bprevious<CR>
 
@@ -114,6 +124,11 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 
 nnoremap <silent> ]B :blast<CR>
+
+
+nmap ga <Plug>(EasyAlign)
+
+xmap ga <Plug>(EasyAlign)
 
 
 
@@ -175,3 +190,13 @@ let g:multi_cursor_skip_key='<D-x>'
 
 let g:multi_cursor_quit_key='<Esc>'
 
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""Local source""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable("~/.local.vim")
+    source ~/.local.vim
+endif
