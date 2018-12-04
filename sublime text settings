@@ -1,0 +1,23 @@
+{
+	"binary_file_patterns":
+	[
+		"tmp/",
+		"node_modules/",
+		".idea/",
+		".byebug_history",
+		"*.log"
+	],
+	"color_scheme": "Packages/Colorsublime - Themes/Cozy.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
+	"tab_size": 2,
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
