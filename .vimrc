@@ -3,11 +3,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
-
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -52,23 +49,14 @@ filetype plugin indent on
 autocmd BufWritePre * StripWhitespace
 
 syntax enable
-
 set tabstop=4 shiftwidth=4 expandtab autoindent smartindent
-
 set backspace=indent,eol,start
-
 set laststatus=2
-
 set wildmenu
-
 let mapleader=','
-
 set number
-
 set t_CO=256
-
 set vb
-
 set autoread
 
 
@@ -82,11 +70,8 @@ if has("gui_running")
     let g:seoul256_background = 233
     colorscheme seoul256
 endif
-
 set guifont=Fira\ Code:h15
-
 set guioptions-=L
-
 set guioptions-=r
 
 
@@ -96,43 +81,22 @@ set guioptions-=r
 """""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""Mappings"""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""
-
 noremap <Up> <NOP>
-
 noremap <Down> <NOP>
-
 noremap <Left> <NOP>
-
 noremap <Right> <NOP>
-
 nnoremap j gj
-
 nnoremap k gk
-
 map <C-n> :NERDTreeToggle<CR>
-
 map <leader>b :BufstopFast<CR>
-
 nmap ,ev :tabedit $MYVIMRC<CR>
-
 nmap <leader>gs :Gstatus<CR>
-
 nnoremap <silent> [b :bprevious<CR>
-
 nnoremap <silent> ]b :bnext<CR>
-
 nnoremap <silent> [B :bfirst<CR>
-
 nnoremap <silent> ]B :blast<CR>
-
-
 nmap ga <Plug>(EasyAlign)
-
 xmap ga <Plug>(EasyAlign)
-
-
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""Autogroup""""""""""""""""""""
@@ -158,40 +122,23 @@ let g:ctrlp_custom_ignore = {
 
 
 
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""Search"""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""
-
 set incsearch
-
 set hlsearch
-
 set ignorecase smartcase
-
 nnoremap <leader><space> :nohlsearch<CR>
-
-
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""Multiple cursor"""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:multi_cursor_use_default_mapping=0
-
 let g:multi_cursor_next_key='<D-d>'
-
 let g:multi_cursor_prev_key='<D-p>'
-
 let g:multi_cursor_skip_key='<D-x>'
-
 let g:multi_cursor_quit_key='<Esc>'
-
-
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
